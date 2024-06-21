@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 
 const Product = () => {
   const [products, setProducts] = useState(null);
-  const user = JSON.parse(localStorage.getItem("user"));
-
   useEffect(() => {
     axios
       .get("/users/search", { params: { limit: 100 } })
@@ -41,7 +39,7 @@ const Product = () => {
     <>
       <section id="product">
         <div className="container">
-          <h1 className="title">{user.role === "admin" ? "Admin" : "User"}</h1>
+          <h1 className="title">Users</h1>
           <div className="userWrapper">{data}</div>
         </div>
       </section>

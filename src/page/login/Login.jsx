@@ -20,7 +20,6 @@ const Login = () => {
       .post("/auth/sign-in", formdata)
       .then((res) => {
         localStorage.setItem("token", res.data.data.token);
-        localStorage.setItem('user', JSON.stringify(res.data.data.user));
         navigate('/'); 
         window.location.reload();
         toast.success(res.data.message);
